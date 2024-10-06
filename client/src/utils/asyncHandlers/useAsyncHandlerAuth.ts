@@ -85,7 +85,7 @@ const handleAsyncError = (
     return setStatusMessageError("Please provide a valid email.");
   if (operation === "signup" && err.error?.code === 11000)
     return setStatusMessageError("Email already exists");
-
+  console.log(err);
   return setStatusMessageError("An error occurred. Please try again.");
 };
 
