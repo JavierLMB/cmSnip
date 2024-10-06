@@ -18,7 +18,7 @@ const Snippets = () => {
   return (
     <SnippetsContainer>
       <SnippetsHeader>
-        <Title>Snippets Views</Title>
+        <Title>Snippets View</Title>
         {!statusMessageError && !statusMessageSuccess && (
           <StatusMessage status="default">Snippets</StatusMessage>
         )}
