@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Build
+/build
+/dist
+
+# Logs
+npm-debug.log*
+pnpm-debug.log*
+
+# Misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+**/*.env
+
+# Client
+client/.env
+
+# Server
+server/config.env
