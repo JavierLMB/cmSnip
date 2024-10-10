@@ -4,7 +4,7 @@ Live link - <a href="https://cmsnip.vercel.app/" target="_blank">https://cmsnip.
 
 ## **cmSnip App**
 
-cmSnip is a flexible content management system (CMS) designed to help teams efficiently manage code snippets and templates. Developers can build dynamic templates that non-technical users can easily populate, making it an ideal tool for collaborative content creation between technical and non-technical team members.
+Welcome to cmSnip, a flexible content management system (CMS) designed to help teams efficiently manage code snippets and templates. Developers can build dynamic templates that non-technical users can easily populate, making it an ideal tool for collaborative content creation between technical and non-technical team members.
 
 ---
 
