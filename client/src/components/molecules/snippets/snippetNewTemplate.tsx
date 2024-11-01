@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import styled, { css } from "styled-components";
+import styled, { css, useTheme } from "styled-components";
 import useAsyncHandlerSnippet from "../../../utils/asyncHandlers/useAsyncHandlerSnippet";
 import useAsyncHandlerTemplate from "../../../utils/asyncHandlers/useAsyncHandlerTemplate";
 import { createSnippet } from "../../../services/snippetService";
@@ -31,6 +31,8 @@ const SnippetsNewTemplate = () => {
     snippetTemplate: "",
     snippetActive: true,
   });
+
+  const theme = useTheme();
 
   const handleChange = (e: any) => {
     const { id, value } = e.target;
@@ -94,7 +96,7 @@ const SnippetsNewTemplate = () => {
   useEffect(() => {
     if (!iframeRef.current) return;
 
-    iframeRef.current.srcdoc = `<style>body { color: white; }</style>${decodeHtml(updatedContent)}`;
+    iframeRef.current.srcdoc = `<style>body { color: ${theme.colors.basic.white}; }</style>${decodeHtml(updatedContent)}`;
   }, [updatedContent]);
 
   useEffect(() => {
