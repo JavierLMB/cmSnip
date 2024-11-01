@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import styled, { css } from "styled-components";
+import styled, { css,  useTheme } from "styled-components";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import useAsyncHandlerSnippet from "../../../utils/asyncHandlers/useAsyncHandlerSnippet";
 import useAsyncHandlerTemplate from "../../../utils/asyncHandlers/useAsyncHandlerTemplate";
@@ -34,6 +34,8 @@ const SnippetsEditTemplate = () => {
     snippetTemplate: snippet.templateID,
     snippetActive: snippet.active,
   });
+
+  const theme = useTheme();
 
   // Handle form input change
   const handleChange = (e: any) => {
@@ -108,7 +110,7 @@ const SnippetsEditTemplate = () => {
   useEffect(() => {
     if (!iframeRef.current) return;
 
-    iframeRef.current.srcdoc = `<style>body { color: white; }</style>${decodeHtml(updatedContent)}`;
+    iframeRef.current.srcdoc = `<style>body { color: ${theme.colors.basic.white}; }</style>${decodeHtml(updatedContent)}`;
   }, [updatedContent]);
 
   useEffect(() => {
