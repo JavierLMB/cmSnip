@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import { updateTemplate } from "../../../services/templateService";
 import useAsyncHandlerTemplate from "../../../utils/asyncHandlers/useAsyncHandlerTemplate";
-import styled, { css } from "styled-components";
+import styled, { css, useTheme } from "styled-components";
 import Button from "../../atoms/button";
 import Dropdown from "../../atoms/dropdown";
 import decodeHtml from "../../../utils/decodehtml";
@@ -21,6 +21,8 @@ const TemplatesEdit = () => {
     active: template.active,
   });
 
+  const theme = useTheme();
+  
   const handleChange = (e: any) => {
     const { id, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [id]: value }));
@@ -39,7 +41,7 @@ const TemplatesEdit = () => {
     const defaultStyle = `
     <style>
       body {
-        color: white;
+        color: ${theme.colors.basic.white};
       }
     </style>
   `;
