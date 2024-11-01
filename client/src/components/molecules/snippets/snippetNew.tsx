@@ -34,7 +34,7 @@ const SnippetsNew = () => {
     const defaultStyle = `
     <style>
       body {
-        color: ${({ theme }) => theme.colors.basic.white};
+        color: ${theme.colors.basic.white};
       }
     </style>
   `;
