@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import styled, { css } from "styled-components";
+import styled, { css, useTheme } from "styled-components";
 import { useNavigate } from "react-router-dom";
 import useAsyncHandlerTemplate from "../../../utils/asyncHandlers/useAsyncHandlerTemplate";
 import { createTemplate } from "../../../services/templateService";
@@ -17,6 +17,8 @@ const TemplatesNew = () => {
     templateActive: true,
   });
 
+  const theme = useTheme();
+  
   const handleChange = (e: any) => {
     const { id, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [id]: value }));
@@ -34,7 +36,7 @@ const TemplatesNew = () => {
     const defaultStyle = `
     <style>
       body {
-        color: white;
+        color: ${theme.colors.basic.white};
       }
     </style>
   `;
