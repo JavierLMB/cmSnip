@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import { updateSnippet } from "../../../services/snippetService";
 import useAsyncHandlerSnippet from "../../../utils/asyncHandlers/useAsyncHandlerSnippet";
-import styled, { css } from "styled-components";
+import styled, { css, useTheme } from "styled-components";
 import Button from "../../atoms/button";
 import Dropdown from "../../atoms/dropdown";
 import decodeHtml from "../../../utils/decodehtml";
@@ -20,6 +20,8 @@ const SnippetsEdit = () => {
     content: decodeHtml(snippet.content),
     active: snippet.active,
   });
+
+  const theme = useTheme();
 
   const handleChange = (e: any) => {
     const { id, value } = e.target;
@@ -39,7 +41,7 @@ const SnippetsEdit = () => {
     const defaultStyle = `
     <style>
       body {
-        color: white;
+       color: ${theme.colors.basic.white};
       }
     </style>
   `;
