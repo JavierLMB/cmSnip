@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import styled, { css } from "styled-components";
+import styled, { css, useTheme } from "styled-components";
 import { useNavigate } from "react-router-dom";
 import useAsyncHandlerSnippe from "../../../utils/asyncHandlers/useAsyncHandlerSnippet";
 import { createSnippet } from "../../../services/snippetService";
@@ -16,6 +16,8 @@ const SnippetsNew = () => {
     snippetContent: "",
     snippetActive: true,
   });
+
+  const theme = useTheme();
 
   const handleChange = (e: any) => {
     const { id, value } = e.target;
